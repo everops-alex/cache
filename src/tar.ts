@@ -40,9 +40,8 @@ export async function extractTar(archivePath: string): Promise<void> {
     const workingDirectory = getWorkingDirectory();
     await io.mkdirP(workingDirectory);
     const args = [
-        "--use-compress-program",
-        "zstd --long=31 -d",
-        "-xf",
+        // required for 16.04
+        "-xf zstd -d",
         archivePath,
         "-P",
         "-C",
@@ -63,9 +62,8 @@ export async function createTar(
 
     const workingDirectory = getWorkingDirectory();
     const args = [
-        "--use-compress-program",
-        "zstd -T0 --long=31",
-        "-cf",
+        // required for 16.04
+        "-cf --zstd",
         CacheFilename,
         "-C",
         workingDirectory,
