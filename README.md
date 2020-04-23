@@ -1,5 +1,7 @@
 # cache
 
+Minor changed based off `imbsky/cache@zstd` -- this change supports Ubuntu 16.04, since the logic on the other repo runs tar with invalid arguments.
+
 This GitHub Action allows caching dependencies and build outputs to improve workflow execution time.
 
 <a href="https://github.com/actions/cache"><img alt="GitHub Actions status" src="https://github.com/actions/cache/workflows/Tests/badge.svg?branch=master&event=push"></a>
